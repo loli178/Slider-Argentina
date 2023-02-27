@@ -1,0 +1,453 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.banner::after {
+  content: '';
+  width: 250%;
+  height: 130%;
+  background: linear-gradient(to right, transparent, #000, #000);
+  position: absolute;
+  top: -10%;
+  right: 0;
+  animation: bannerAnim 3s 0.3s linear forwards;
+}
+
+@keyframes bannerAnim {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -250%;
+  }
+}
+
+.banner h1 {
+  color: #217dbf;
+  font-size: 150px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 100px;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+
+.banner button {
+  width: 300px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #01021f, #0c6fc0);
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  transform: perspective(500px) rotateY(-15deg);
+  text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  animation: buttonAnim 1s 2.5s backwards;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.banner button:hover {
+  transform: perspective(500px) rotateY(15deg);
+  text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to left, #01021f, #0c6fc0);
+}
+
+@keyframes buttonAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.banner button::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(-30deg);
+  transition: all 0.5s;
+}
+
+.banner button:hover::before {
+  left: 100%;
+}
+
+.slideshow-wrapper {
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+.slideshow {
+  display: flex;
+  width: 2200%;
+  height: 100%;
+  position: relative;
+}
+
+@keyframes slideAnim {
+  0% {
+    left: 0;
+  }
+  2% {
+    left: 0;
+  }
+  4% {
+    left: -100%;
+  }
+  6% {
+    left: -100%;
+  }
+  8% {
+    left: -200%;
+  }
+  10% {
+    left: -200%;
+  }
+  12% {
+    left: -300%;
+  }
+  14% {
+    left: -300%;
+  }
+  16% {
+    left: -400%;
+  }
+  18% {
+    left: -400%;
+  }
+  20% {
+    left: -500%;
+  }
+  22% {
+    left: -500%;
+  }
+  24% {
+    left: -600%;
+  }
+  26% {
+    left: -600%;
+  }
+
+  28% {
+    left: -700%;
+  }
+  30% {
+    left: -700%;
+  }
+  32% {
+    left: -800%;
+  }
+  34% {
+    left: -800%;
+  }
+  36% {
+    left: -900%;
+  }
+  38% {
+    left: -900%;
+  }
+  38% {
+    left: -1000%;
+  }
+  40% {
+    left: -1000%;
+  }
+  42% {
+    left: -1100%;
+  }
+  44% {
+    left: -1100%;
+  }
+  46% {
+    left: -1200%;
+  }
+  48% {
+    left: -1200%;
+  }
+
+  50% {
+    left: -1300%;
+  }
+  52% {
+    left: -1300%;
+  }
+  54% {
+    left: -1400%;
+  }
+  56% {
+    left: -1400%;
+  }
+  58% {
+    left: -1500%;
+  }
+  60% {
+    left: -1500%;
+  }
+  62% {
+    left: -1600%;
+  }
+  64% {
+    left: -1600%;
+  }
+  68% {
+    left: -1700%;
+  }
+  70% {
+    left: -1700%;
+  }
+  72% {
+    left: -1800%;
+  }
+  75% {
+    left: -1800%;
+  }
+  80% {
+    left: -1900%;
+  }
+  86% {
+    left: -1900%;
+  }
+  88% {
+    left: -2000%;
+  }
+  90% {
+    left: -2000%;
+  }
+  92% {
+    left: -2100%;
+  }
+  94% {
+    left: -2100%;
+  }
+  96% {
+    left: -2200%;
+  }
+  97% {
+    left: -2200%;
+  }
+  98% {
+    left: -2300%;
+  }
+  99% {
+    left: -2300%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+}
+
+.slide:nth-child(1) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/buenos\ aires.png) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(2) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/catamarca.jfif) center no-repeat;
+  background-size: cover;
+}
+
+.slide:nth-child(3) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/chaco.jfif) center no-repeat;
+  background-size: cover;
+}
+
+.slide:nth-child(4) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/chubut.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(5) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/cordoba.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(6) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/corrientes.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(7) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/entre\ rios.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(8) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/formosa.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(9) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/jujuy.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(10) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/la\ pamapa.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(11) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/la\ rioja.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(12) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/mendoza.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(13) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/misiones.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(14) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/neuquen.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(15) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/rio\ negro.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(16) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/salta.jpg) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(17) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/san\ juan.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(18) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/san\ luis.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(19) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/santa\ cruz.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(20) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/santafe.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(21) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/santiago\ del\ estero.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(22) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/tierra\ del\ fuego.jfif) center no-repeat;
+  background-size: cover;
+}
+.slide:nth-child(23) {
+  background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0.8), transparent),
+    url(../images/tucuman.jfif) center no-repeat;
+  background-size: cover;
+}
+.content {
+  width: 350px;
+  position: relative;
+  top: 35%;
+  left: 5%;
+}
+
+.content h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: white;
+}
+
+.content p {
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  color: #ccc;
+  font-weight: 400;
+}
+
+.content button {
+  padding: 10px 10px 0 0;
+  margin-top: 30px;
+  font-family: 'Oswald', sans-serif;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.content i {
+  margin-left: 10px;
+}
+
+@media (max-width: 800px) {
+  .banner h1 {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 580px) {
+  .banner h1 {
+    font-size: 40px;
+  }
+
+  .banner button {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 375px) {
+  .content {
+    width: 280px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+}
